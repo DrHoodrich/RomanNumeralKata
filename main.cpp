@@ -4,12 +4,13 @@
 using std::cout;
 using std::endl;
 
-
-
-TEST_CASE( "Board is created", "[board]" ) 
+char numberToRomanNumeral ()
 {
-	char numeralOne = 'I';
-    REQUIRE( numeralOne == 'I');
+		return ('I');
+}
 
+TEST_CASE( "The roman numerals are converted", "[romanNumeral]" ) 
+{
+    REQUIRE( numberToRomanNumeral() == 'I');
 }
 
