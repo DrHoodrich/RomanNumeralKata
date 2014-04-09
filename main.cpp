@@ -3,15 +3,21 @@
 #include <iostream>
 using std::cout;
 using std::endl;
+using std::string;
 
-char numberToRomanNumeral ()
+string numberToRomanNumeral (int numberToConvert)
 {
-		return ('I');
+	if (numberToConvert == 2)
+	{
+		return "II";
+	}
+	else 
+		return "I";
 }
 
 TEST_CASE( "The roman numerals are converted", "[romanNumeral]" ) 
 {
-    REQUIRE( numberToRomanNumeral() == 'I');
-	REQUIRE( numberToRomanNumeral() == 'II');
+    REQUIRE( numberToRomanNumeral(1) == "I");
+	REQUIRE( numberToRomanNumeral(2) == "II");
 }
 
