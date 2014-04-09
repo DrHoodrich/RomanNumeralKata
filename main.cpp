@@ -12,5 +12,6 @@ char numberToRomanNumeral ()
 TEST_CASE( "The roman numerals are converted", "[romanNumeral]" ) 
 {
     REQUIRE( numberToRomanNumeral() == 'I');
+	REQUIRE( numberToRomanNumeral() == 'II');
 }
 
