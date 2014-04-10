@@ -7,6 +7,10 @@ using std::string;
 
 string numberToRomanNumeral (int numberToConvert)
 {
+	if (numberToConvert == 4)
+		return "IV";
+
+
 	string convertedNumeral;
 	for (int current = 0; current < numberToConvert; ++current)
 	{
