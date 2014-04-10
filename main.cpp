@@ -7,13 +7,13 @@ using std::string;
 
 string numberToRomanNumeral (int numberToConvert)
 {
-
-	if (numberToConvert == 2)
+	string convertedNumeral;
+	for (int current = 0; current < numberToConvert; ++current)
 	{
-		return "II";
+		convertedNumeral = convertedNumeral + string("I");
 	}
-	else 
-		return "I";
+
+	return convertedNumeral;
 }
 
 TEST_CASE( "The roman numerals are converted", "[romanNumeral]" ) 
