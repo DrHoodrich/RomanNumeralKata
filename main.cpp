@@ -25,7 +25,7 @@ string numberToRomanNumeral (int numberToConvert)
 
 TEST_CASE( "The roman numerals are converted", "[romanNumeral]" ) 
 {
-	string testRomanNumerals[] = {"Array Padding","I","II","III","IV","V"};
+	string testRomanNumerals[] = {"Array Padding","I","II","III","IV","V","X"};
 	int numberOfTests = sizeof( testRomanNumerals ) / sizeof( testRomanNumerals[ 0 ] );
 
 	for (int currentTest = 1; currentTest < numberOfTests; ++currentTest)
