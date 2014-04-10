@@ -18,8 +18,10 @@ string numberToRomanNumeral (int numberToConvert)
 
 TEST_CASE( "The roman numerals are converted", "[romanNumeral]" ) 
 {
+
     REQUIRE( numberToRomanNumeral(1) == "I");
 	REQUIRE( numberToRomanNumeral(2) == "II");
 	REQUIRE( numberToRomanNumeral(3) == "III");
+	REQUIRE( numberToRomanNumeral(4) == "IV");
 }
 
