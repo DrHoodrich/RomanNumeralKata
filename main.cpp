@@ -4,6 +4,7 @@
 using std::cout;
 using std::endl;
 using std::string;
+using std::vector;
 
 string numberToRomanNumeral (int numberToConvert)
 {
@@ -24,11 +25,12 @@ string numberToRomanNumeral (int numberToConvert)
 
 TEST_CASE( "The roman numerals are converted", "[romanNumeral]" ) 
 {
+	string testRomanNumerals[] = {"Array Padding","I","II","III","IV","V"};
+	int numberOfTests = sizeof( testRomanNumerals ) / sizeof( testRomanNumerals[ 0 ] );
 
-    REQUIRE( numberToRomanNumeral(1) == "I");
-	REQUIRE( numberToRomanNumeral(2) == "II");
-	REQUIRE( numberToRomanNumeral(3) == "III");
-	REQUIRE( numberToRomanNumeral(4) == "IV");
-	REQUIRE( numberToRomanNumeral(5) == "V");
+	for (int currentTest = 1; currentTest < numberOfTests; ++currentTest)
+	{
+    REQUIRE( numberToRomanNumeral(currentTest) == testRomanNumerals[currentTest]);
+	}
 }
 
