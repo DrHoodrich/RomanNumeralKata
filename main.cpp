@@ -8,6 +8,9 @@ using std::vector;
 
 string numberToRomanNumeral (int numberToConvert)
 {
+	if (numberToConvert == 10)
+		return "X";
+
 	if (numberToConvert == 5)
 		return "V";
 
@@ -26,11 +29,12 @@ string numberToRomanNumeral (int numberToConvert)
 TEST_CASE( "The roman numerals are converted", "[romanNumeral]" ) 
 {
 	string testRomanNumerals[] = {"Array Padding","I","II","III","IV","V","X"};
+	int numbersToTest[] = {0,1,2,3,4,5,10};
 	int numberOfTests = sizeof( testRomanNumerals ) / sizeof( testRomanNumerals[ 0 ] );
 
 	for (int currentTest = 1; currentTest < numberOfTests; ++currentTest)
 	{
-    REQUIRE( numberToRomanNumeral(currentTest) == testRomanNumerals[currentTest]);
+    REQUIRE( numberToRomanNumeral(numbersToTest[currentTest]) == testRomanNumerals[currentTest]);
 	}
 }
 
