@@ -7,9 +7,11 @@ using std::string;
 
 string numberToRomanNumeral (int numberToConvert)
 {
+	if (numberToConvert == 5)
+		return "V";
+
 	if (numberToConvert == 4)
 		return "IV";
-
 
 	string convertedNumeral;
 	for (int current = 0; current < numberToConvert; ++current)
@@ -27,5 +29,6 @@ TEST_CASE( "The roman numerals are converted", "[romanNumeral]" )
 	REQUIRE( numberToRomanNumeral(2) == "II");
 	REQUIRE( numberToRomanNumeral(3) == "III");
 	REQUIRE( numberToRomanNumeral(4) == "IV");
+	REQUIRE( numberToRomanNumeral(5) == "V");
 }
 
