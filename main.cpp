@@ -12,14 +12,20 @@ string numberToRomanNumeral (int numberToConvert)
 
 	if (numberToConvert == 40)
 	{
-		convertedNumeral += string("XL");
-		numberToConvert-= 40;
+		convertedNumeral += string("X");
+		numberToConvert += 10;
+	}
+
+	if (numberToConvert == 50)
+	{
+		convertedNumeral += string("L");
+		numberToConvert -= 50;
 	}
 
 	while (numberToConvert >= 10)
 	{
 		convertedNumeral += string("X");
-		numberToConvert-=10;
+		numberToConvert -= 10;
 	}
 
 	if (numberToConvert == 9)
