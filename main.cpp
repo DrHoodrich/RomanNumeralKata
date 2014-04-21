@@ -9,8 +9,8 @@ using std::vector;
 string numberToRomanNumeral (int numberToConvert)
 {
 	string convertedNumeral;
-	int numberComparisons[]={50,40,10,9,5,4,1};
-	string romantoNumberComparisons[]={"L","XL","X","IX","V","IV","I"};
+	int numberComparisons[]={90,50,40,10,9,5,4,1};
+	string romantoNumberComparisons[]={"XC","L","XL","X","IX","V","IV","I"};
 	int numberToCompare = 0;
 	while (numberToConvert > 0)
 	{
