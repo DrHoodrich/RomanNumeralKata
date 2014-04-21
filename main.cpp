@@ -9,47 +9,17 @@ using std::vector;
 string numberToRomanNumeral (int numberToConvert)
 {
 	string convertedNumeral;
-
-	if (numberToConvert == 40)
+	int numberComparisons[]={50,40,10,9,5,4,1};
+	string romantoNumberComparisons[]={"L","XL","X","IX","V","IV","I"};
+	int numberToCompare = 0;
+	while (numberToConvert > 0)
 	{
-		convertedNumeral += string("X");
-		numberToConvert += 10;
-	}
-
-	if (numberToConvert == 50)
-	{
-		convertedNumeral += string("L");
-		numberToConvert -= 50;
-	}
-
-	while (numberToConvert >= 10)
-	{
-		convertedNumeral += string("X");
-		numberToConvert -= 10;
-	}
-
-	if (numberToConvert == 9)
-	{
-		numberToConvert++;
-		convertedNumeral += string("I");
-	}
-
-	if (numberToConvert == 4)
-	{
-		numberToConvert++;
-		convertedNumeral += string("I");
-	}
-
-	if (numberToConvert >= 5)
-	{
-		convertedNumeral += string("V");
-		numberToConvert-=5;
-	}
-
-	while (numberToConvert > 0 && numberToConvert < 4 )
-	{
-		convertedNumeral = convertedNumeral + string("I");
-		numberToConvert--;
+		while (numberToConvert - numberComparisons[numberToCompare] >= 0)
+		{
+			numberToConvert -= numberComparisons[numberToCompare];
+			convertedNumeral += romantoNumberComparisons[numberToCompare];
+		}
+		numberToCompare++;
 	}
   
   return convertedNumeral;
