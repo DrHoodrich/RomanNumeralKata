@@ -10,10 +10,16 @@ string numberToRomanNumeral (int numberToConvert)
 {
 	string convertedNumeral;
 
+	if (numberToConvert == 40)
+	{
+		convertedNumeral += string("XL");
+		numberToConvert-= 40;
+	}
+
 	while (numberToConvert >= 10)
 	{
-		numberToConvert-=10;
 		convertedNumeral += string("X");
+		numberToConvert-=10;
 	}
 
 	if (numberToConvert == 9)
@@ -30,8 +36,8 @@ string numberToRomanNumeral (int numberToConvert)
 
 	if (numberToConvert >= 5)
 	{
-		numberToConvert-=5;
 		convertedNumeral += string("V");
+		numberToConvert-=5;
 	}
 
 	while (numberToConvert > 0 && numberToConvert < 4 )
