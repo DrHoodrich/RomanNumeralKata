@@ -8,22 +8,40 @@ using std::vector;
 
 string numberToRomanNumeral (int numberToConvert)
 {
-	if (numberToConvert == 10)
-		return "X";
-
-	if (numberToConvert == 5)
-		return "V";
-
-	if (numberToConvert == 4)
-		return "IV";
-
 	string convertedNumeral;
-	for (int current = 0; current < numberToConvert; ++current)
+
+	while (numberToConvert >= 10)
 	{
-		convertedNumeral = convertedNumeral + string("I");
+		numberToConvert-=10;
+		convertedNumeral += string("X");
 	}
 
-	return convertedNumeral;
+	if (numberToConvert == 9)
+	{
+		numberToConvert++;
+		convertedNumeral += string("I");
+	}
+
+	if (numberToConvert == 4)
+	{
+		numberToConvert++;
+		convertedNumeral += string("I");
+	}
+
+	if (numberToConvert >= 5)
+	{
+		numberToConvert-=5;
+		convertedNumeral += string("V");
+	}
+
+	while (numberToConvert > 0 && numberToConvert < 4 )
+	{
+		convertedNumeral = convertedNumeral + string("I");
+		numberToConvert--;
+	}
+  
+  return convertedNumeral;
+
 }
 
 TEST_CASE( "The roman numerals are converted", "[romanNumeral]" ) 
