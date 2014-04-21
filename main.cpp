@@ -9,8 +9,8 @@ using std::vector;
 string numberToRomanNumeral (int numberToConvert)
 {
 	string convertedNumeral;
-	int numberComparisons[]={90,50,40,10,9,5,4,1};
-	string romantoNumberComparisons[]={"XC","L","XL","X","IX","V","IV","I"};
+	int numberComparisons[]={100,90,50,40,10,9,5,4,1};
+	string romantoNumberComparisons[]={"C","XC","L","XL","X","IX","V","IV","I"};
 	int numberToCompare = 0;
 	while (numberToConvert > 0)
 	{
@@ -28,8 +28,8 @@ string numberToRomanNumeral (int numberToConvert)
 
 TEST_CASE( "The roman numerals are converted", "[romanNumeral]" ) 
 {
-	string testRomanNumerals[] = {"Array Padding","I","II","III","IV","V","X","XXXV", "XL","L","XC"};
-	int numbersToTest[] = {0,1,2,3,4,5,10,35,40,50,90};
+	string testRomanNumerals[] = {"Array Padding","I","II","III","IV","V","X","XXXV", "XL","L","XC","C"};
+	int numbersToTest[] = {0,1,2,3,4,5,10,35,40,50,90,100};
 	int numberOfTests = sizeof( testRomanNumerals ) / sizeof( testRomanNumerals[ 0 ] );
 
 	for (int currentTest = 1; currentTest < numberOfTests; ++currentTest)
